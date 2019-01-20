@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "https://silk-demo-store45.mybigcommerce.com",
+  "port": 3000,
+  "clientId": "978489k9xkj1jtlx88j61ybaa0g2fmd",
+  "accessToken": "icy2smfrxbj5p01h1tofwc94u7t4qwh",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
