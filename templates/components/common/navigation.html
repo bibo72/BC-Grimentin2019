@@ -1,5 +1,18 @@
 <nav class="navUser">
-    {{> components/common/currency-selector}}
+    <!--{{> components/common/currency-selector}}-->
+
+    <li class="navUser-item navUser-item--account">
+        {{#if customer}}
+        <a class="navUser-action" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
+        <a class="navUser-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+        {{else}}
+        <a class="navUser-action" href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
+        {{#if settings.account_creation_enabled}}
+        <!--<span class="navUser-or">{{lang 'common.or'}}</span> --><a class="navUser-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
+        {{/if}}
+        {{/if}}
+    </li>
+
 
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
@@ -24,25 +37,19 @@
             </li>
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
+
+        <li class="navUser-item navUser-item--wish">
+            <a class="navUser-action" href="{{urls.account.wishlists.all}}">{{lang 'account.mobile_nav.wishlists'}}</a>
+        </li>
+
         <li class="navUser-item">
             <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</a>
         </li>
-        {{#if settings.gift_certificates_enabled}}
-            <li class="navUser-item">
-                <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
-            </li>
-        {{/if}}
-        <li class="navUser-item navUser-item--account">
-            {{#if customer}}
-                <a class="navUser-action" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
-                <a class="navUser-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
-            {{else}}
-                <a class="navUser-action" href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
-                {{#if settings.account_creation_enabled}}
-                    <span class="navUser-or">{{lang 'common.or'}}</span> <a class="navUser-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
-                {{/if}}
-            {{/if}}
-        </li>
+        <!--{{#if settings.gift_certificates_enabled}}-->
+            <!--<li class="navUser-item">-->
+                <!--<a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>-->
+            <!--</li>-->
+        <!--{{/if}}-->
         <li class="navUser-item navUser-item--cart">
             <a
                 class="navUser-action"

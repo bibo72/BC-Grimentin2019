@@ -1,0 +1,62 @@
+.banners {
+  background: #252525;
+  p {
+    display: flex;
+    justify-content: space-between;
+  }
+  .banner {
+    max-width: 1120px;
+  }
+}
+
+.header {
+  margin: auto;
+  position: relative;
+  .navUser {
+    padding: 0;
+    max-width: 1120px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 0;
+    >li{
+      a:first-child{
+        &:before{
+         content: url("../img/local/user.png");
+        }
+      }
+    }
+    .navUser-action--quickSearch{
+      &:before{
+        content: url("../img/local/search.png");
+      }
+    }
+    .navUser-item--cart a{
+      &:before{
+        content: url("../img/local/cart.png");
+      }
+    }
+    .navUser-item--wish a{
+      &:before{
+        content: url("../img/local/heart.png");
+      }
+    }
+    a{
+      &:before{
+        margin-right: 7px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.header-logo {
+  margin: 0 auto;
+  max-width: 230px;
+}
+
+#menu {
+  border-top: 1px solid gainsboro;
+}
