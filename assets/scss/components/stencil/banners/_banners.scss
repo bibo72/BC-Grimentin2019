@@ -11,17 +11,22 @@
 // -----------------------------------------------------------------------------
 
 .banners {
-    background-color: stencilColor("color-primary");
+    background-color: #252525;
     color: stencilColor("color-white");
-    padding: spacing("half") 0;
+    padding: 1rem 0;
     text-align: center;
 
-    p:last-child {
+    p{
         margin-bottom: 0;
+        font-size: 0.9285rem;
     }
 
     a {
         color: color("whites", "bright");
+    }
+    .banner>div>p{
+        display: flex;
+        justify-content: space-between;
     }
 }
 

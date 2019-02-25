@@ -1,11 +1,36 @@
-<section class="productCarousel"
+
+<div class="ka-container">
+    <section class="productCarousel"
     data-list-name="{{list}}"
     data-slick='{
         "dots": true,
         "infinite": false,
         "mobileFirst": true,
-        "slidesToShow": {{ columns }},
-        "slidesToScroll": 3
+        "slidesToShow": 2,
+        "slidesToScroll": 3,
+        "responsive": [
+            {
+                "breakpoint": 1260,
+                "settings": {
+                    "slidesToScroll": 5,
+                    "slidesToShow": 5
+                }
+            },
+            {
+                "breakpoint": 800,
+                "settings": {
+                    "slidesToScroll": 4,
+                    "slidesToShow": 4
+                }
+            },
+            {
+                "breakpoint": 550,
+                "settings": {
+                    "slidesToScroll": 2,
+                    "slidesToShow": 2
+                }
+            }
+        ]
     }'
 >
     {{#each products}}
@@ -14,3 +39,5 @@
     </div>
     {{/each}}
 </section>
+
+</div>

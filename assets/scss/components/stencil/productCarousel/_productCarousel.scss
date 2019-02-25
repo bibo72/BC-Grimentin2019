@@ -36,6 +36,9 @@
 
         .card-title {
             overflow-wrap: break-word;
+            @include breakpoint("medium") {
+                text-align: center;
+            }
         }
     }
 }

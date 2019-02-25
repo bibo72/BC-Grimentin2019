@@ -252,7 +252,8 @@
     margin-right: spacing("quarter");
 
     @include breakpoint("small") {
-        font-family: fontFamily("headingSans");
+        // font-family: fontFamily("headingSans");
+        font-family:PoppinsM;
         font-size: fontSize("smallest");
         font-weight: fontWeight("normal");
     }

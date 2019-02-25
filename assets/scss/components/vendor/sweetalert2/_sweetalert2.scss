@@ -12,7 +12,8 @@
 .swal2-modal {
     background-color: $alert-modal-bgColor;
     border-radius: $alert-modal-borderRadius;
-    font-family: $alert-font-body;
+    // font-family: $alert-font-body;
+    font-family:PoppinsM;
 
     .swal2-title {
         color: $alert-font-headingsColor;

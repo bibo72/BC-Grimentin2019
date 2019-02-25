@@ -38,7 +38,8 @@
 // -----------------------------------------------------------------------------
 
 .compareTable-heading {
-    font-family: fontFamily("headingSans");
+    // font-family: fontFamily("headingSans");
+    font-family:PoppinsM;
     font-size: fontSize("smaller");
     font-weight: fontWeight("normal");
     padding: (spacing("base") + spacing("sixth")) spacing("base");

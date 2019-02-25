@@ -1,5 +1,5 @@
-<h5 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h5>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
+<h5 class="footer-info-heading">SUBSCRIBLE EMAIL</h5>
+<p>Follow Us For Better Updates.</p>
 
 <form class="form" action="{{urls.subscribe.action}}" method="post">
     <fieldset class="form-fieldset">
@@ -9,12 +9,9 @@
         <div class="form-field">
             <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
             <div class="form-prefixPostfix wrap">
-                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
-                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
+                <input class="el-emailInput form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="Enter your email here...">
+                <input class="el-emailBtn button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
             </div>
-            {{#if settings.show_newsletter_summary }}
-                <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
-            {{/if}}
         </div>
     </fieldset>
 </form>

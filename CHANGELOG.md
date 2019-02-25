@@ -1,11 +1,31 @@
 # Changelog
 
 ## Draft
+- Added package-lock.json. [#1441](https://github.com/bigcommerce/cornerstone/pull/1441)
+- Product description in Compare no longer shows escaped HTML. [#1439](https://github.com/bigcommerce/cornerstone/pull/1439)
 
+## 3.2.0 (2019-02-05)
+- Align product thumbnail image slider arrows. [#1399](https://github.com/bigcommerce/cornerstone/pull/1399)
+- Don't fire Cart API request if there is no cart [#1402](https://github.com/bigcommerce/cornerstone/pull/1402)
+- Ensure SKU and UPC display correctly for Variants on PDP. [#1431](https://github.com/bigcommerce/cornerstone/pull/1431)
+- Corrected IDs in date.html form fields. [#1433](https://github.com/bigcommerce/cornerstone/pull/1433)
+- Cleanup and XSS fix on Cart page. [#1434](https://github.com/bigcommerce/cornerstone/pull/1434)
+- Fix for product without image on Compare page. [#1438](https://github.com/bigcommerce/cornerstone/pull/1438)
+- Resolve settings scope passed to components. [#1435](https://github.com/bigcommerce/cornerstone/pull/1435)
+
+## 3.1.1 (2019-01-23)
+
+- Downgrade Webpack to last known good version during development. [#1428](https://github.com/bigcommerce/cornerstone/pull/1428)
+
+## 3.1.0 (2019-01-21)
+
+- Fix for ESLint "func-names" warnings. [#1420](https://github.com/bigcommerce/cornerstone/pull/1420)
 - Major performance improvements. Reduce Javascript bundle size from 376kb to 286kb. [#1390](https://github.com/bigcommerce/cornerstone/pull/1390)
 - Fixed breadcrumbs for product and category pages [#1403](https://github.com/bigcommerce/cornerstone/pull/1403)
 - Send GA tracking event whenever the last product is removed from the CART[#1409](https://github.com/bigcommerce/cornerstone/pull/1409)
 - Fix cart item quantity change rollback [#1418](https://github.com/bigcommerce/cornerstone/pull/1418)
+- Changed z-index to higher for header [#1422](https://github.com/bigcommerce/cornerstone/pull/1422)
+- Removed customer (not address) phone number requirement from Edit Account [#1417](https://github.com/bigcommerce/cornerstone/pull/1417)
 
 ## 3.0.0 (2018-12-21)
 ### Breaking Changes

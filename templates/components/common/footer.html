@@ -1,105 +1,207 @@
+
+
 {{#if banners.bottom}}
-    {{#if settings.data_tag_enabled}}
-        <div class="banners" data-banner-location="bottom">
-            {{#each (limit banners.bottom_metadata 1)}}
-                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
-                    <div data-event-type="promotion-click">
-                        {{{this.content}}}
-                    </div>
-                </div>
-            {{/each}}
-        </div>
-    {{else}}
-        <div class="banners" data-banner-location="bottom">
-            <div class="banner">
-                {{{limit banners.bottom 1}}}
+<div class="el-subScrible">
+    <div class="el-comment">
+        <section class="heroCarousel"
+                 data-slick='{
+        "dots": true,
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "autoplaySpeed": {{carousel.swap_frequency}}
+    }'>
+            
+<div class="heroCarousel-slide heroCarousel-slide--stretch">
+                    <p class="el-commentContent">Good quality shoes are very important, soft skin, makes it easier to walk. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p class="el-writer">-Carl Mathew</p>
             </div>
+                    <div class="heroCarousel-slide heroCarousel-slide--stretch">
+                    <p class="el-commentContent">Good quality shoes are very important, soft skin, makes it easier to walk. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p class="el-writer">-Carl Mathew</p>
+                    </div>
+                    <div class="heroCarousel-slide heroCarousel-slide--stretch">
+                    <p class="el-commentContent">Good quality shoes are very important, soft skin, makes it easier to walk. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p class="el-writer">-Carl Mathew</p>
+                    </div>
+              
+
+            <!--<div class="banners el-bottomBanner" data-banner-location="bottom">-->
+                <!--<div class="banner">-->
+                    <!---->
+                <!--</div>-->
+            <!--</div>-->
+        </section>
+    </div>
+    <div class="el-email">
+        {{#if settings.show_newsletter_box}}
+        <div class="el-content">
+        {{> components/common/subscription-form}}
         </div>
-    {{/if}}
+        {{/if}}
+        <img src="{{cdn 'img/email_03.jpg'}}" alt="">
+    </div>
+</div>
 
 {{/if}}
 <footer class="footer" role="contentinfo">
-    <div class="container">
-        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-            <article class="footer-info-col
-                footer-info-col--social
-                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
-                data-section-type="footer-webPages">
-                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
-                    {{> components/common/social-links}}
-            </article>
-        {{/if}}
-        <section class="footer-info">
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li>
-                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
-                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </article>
-
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
-                <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each shop_by_brand}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                </ul>
-            </article>
-            {{/and}}
-
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
-                {{/if}}
-            </article>
-            {{/if}}
-
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
-            </article>
-        </section>
-        {{#if theme_settings.geotrust_ssl_common_name}}
-            <div class="footer-geotrust-ssl-seal">
-                {{> components/common/geotrust-ssl-seal}}
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">Powered by <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
-            </div>
-        {{/if}}
-    </div>
+        <div class="el-bottomBanner">
+                <div class="el-out">
+                        <div class="el-inner">
+                                <div class="el-innerImg">
+                                    <!-- <img src="{{cdn '../img/money.jpg'}}" alt="" /> -->
+                                    <img width="26" height="26" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ODJlMWEzMWQtZTJlNy00OGM1LWExZGUtOGJiOGI2NmUwMmY2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQzJCRjFDMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQzJCRjFCMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MmQ4MzNkOTAtZDljZi00YWI0LTgwMjYtNjEyY2RmYzZhZTQ4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyZTFhMzFkLWUyZTctNDhjNS1hMWRlLThiYjhiNjZlMDJmNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIABoAGgMBEQACEQEDEQH/xABuAAEBAQEAAAAAAAAAAAAAAAAHAwUGAQEAAAAAAAAAAAAAAAAAAAAAEAAABQIDBAcGBwAAAAAAAAABAgMEBREGACESMUETB1FhIjJSMxRicjQVNwiBQiNTRDU2EQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwBQuS5ruvS7nll2W8+VR0VQtw3CUNShDmqHAQpShgEBCoCA1AcwAO0B/LwvICNmk4yQuGUeSms6b2ZIuc/AVKG0TlSMUe3l2dVN+A7JpO3Pyyk41GZljXHy/mDkSYzSo6l2hlA1J8RSo60xLnWtNIVLSmkQZ6h09eAJ/tuAh7JkHKmci4lXRpEw97jUJkO/YNfxwB+pDS1txaLiEWjbysZuMi49Kb9FwKHD0uyqny1GIQ1QGomyqBd2AReZRLec8gXCzNAG0SePaOI1A21IDnSOgUKiOYagLt6sBk/M7m8Sn059Tv8Aj+n3sBWURm+Vd3yVwsWKsnY08p6mVbtg1KsXOYmVKXZoNUegNwiFC1Dl5Nv9vspIEl0LlWjoxwoq4lYdM7lIiplC5gVEExMXUbvachDIuA23C7zm26joOEYLRvLWLUTO8fKlFIXYIdkiCBfAFKdW0aCAAINfo2n7JPL4PdDyvB7vVgLDswAzK/6g3078z+V/Ybd/tYBhafCo+X3C+T5ez8ns9GArgP/Z">
+                                </div>
+                                <div class="el-innerP">
+                                    <p>100% MONEY BACK</p>
+                                    <p>GUARANTEE</p>
+                                </div>
+                            </div>
+                   
+                    <div class="el-inner">
+                        <div class="el-innerImg">
+                            <!-- <img src="{{cdn '../img/shipping.jpg'}}" alt="" /> -->
+                            <img width="31" height="25" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ODJlMWEzMWQtZTJlNy00OGM1LWExZGUtOGJiOGI2NmUwMmY2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQzJCRjIwMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQzJCRjFGMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MmQ4MzNkOTAtZDljZi00YWI0LTgwMjYtNjEyY2RmYzZhZTQ4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyZTFhMzFkLWUyZTctNDhjNS1hMWRlLThiYjhiNjZlMDJmNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIABkAHwMBEQACEQEDEQH/xABwAAEAAwEBAAAAAAAAAAAAAAAHAAIDBggBAQAAAAAAAAAAAAAAAAAAAAAQAAEDAgQDAwkJAAAAAAAAAAIBAwQFBgAREgchMRNBUSKx0UIkVJQVCBjCc4OT03Q1VjcRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AFveGXNrFQoO3tMeNmRX3+tVXWl0k3TmOLuapy15Ll36cu3AZ/TZtZ7HJ95cwFH/AJatsiYcFhiUw+QqjTySDJQPLwlkvBcl44CWDU6/W9srgtWS8SXbQ2plGccU1Q1c6RjFd18+PJC7dOeAKbcoFFva1rive5bqfjXIyT3SBHwBGQAOo2CgSayAyXSIgqJ2JxwBL8Yq3t0j80/PgN4NRqEidHYfqj8dh10AdkE4ao2BEiEapn6KccAvXVa9v2Xdtvw7cuqQca6PUK8RSWnCSLIUWFfIwRARNDxEGtPCo5ouA4S6dspVA3Bh2aU1JD0xyK2EwWlEfWiQUXRqVV0qvfgEr6Sal/ZGfdS/VwFT+UupCBElxsqooqoiRT45fiYAps6xpFzRLgkNyUjfAae7UTAm1NXOiKr0kyUdKlp54D0ffX+52T9w79vALWAmAHtof53cX98XkcwH/9k=">
+                        </div>
+                        <div class="el-innerP">
+                            <p>FREE SHIPPING</p>
+                            <p>ON ORDER OVER 500$</p>
+                        </div>
+                    </div>
+                    <div class="el-inner">
+                            <div class="el-innerImg">
+                                <!-- <img src="{{cdn '../img/support.jpg'}}" alt="" /> -->
+                                <img width="24" height="24" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ODJlMWEzMWQtZTJlNy00OGM1LWExZGUtOGJiOGI2NmUwMmY2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQzZGODZEMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQzZGODZDMjhCMTExRTc4QzMzOUEyRjRERDI1QzJGIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MmQ4MzNkOTAtZDljZi00YWI0LTgwMjYtNjEyY2RmYzZhZTQ4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyZTFhMzFkLWUyZTctNDhjNS1hMWRlLThiYjhiNjZlMDJmNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIABgAGAMBEQACEQEDEQH/xABlAAACAwAAAAAAAAAAAAAAAAAFCAIGBwEBAAAAAAAAAAAAAAAAAAAAABAAAgEEAQMCBAcAAAAAAAAAAQIDEQQFBgAhEgcxUUFhYhNxoTJCI1MVEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDP9u8g7HsG1zZ6W8milS4MuOjDsBbKjViWMVovaKfiep4Di+ONqk2rSsXnZojDPdREXCEUH3Y2Mbsn0syEr8uBZOAlvmnSbjUt8vFWKmMyEjXuNciqFJG7nj9v43PbT2p78BlfF/lDV9n1eOWGSDHXWNgH+jjqrEtusS0LoDQfZoKgjoB0PAM6r5H0rapZYcFlYrq4hJDwENFKQP3KkgRmX6gKcCe86NgtzwcmJy0dV/XbXKUEsEtKB4yfzHoRwFP3bwrvmp3MrGzkyONFezJWStIhQ/2ItXj6evd0+Z4Afx/qO2bBsVpFgIriOaKZDJkIu5FtgGFZGl6BSo6+tT8OB//Z">
+                            </div>
+                            <div class="el-innerP">
+                                <p>24-HOUR</p>
+                                <p>ACTIVE SUPPORT</p>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="el-originFooter">
+                    <!--<img src="{{cdn 'img/footerImg_07.jpg'}}" alt="">-->
+                <div class="container">
+                    {{!#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+                        <!--<article class="footer-info-col-->
+                            <!--footer-info-col&#45;&#45;social-->
+                            <!--footer-info-col&#45;&#45;{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"-->
+                            <!--data-section-type="footer-webPages">-->
+                                <!--<h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>-->
+                                <!--{{> components/common/social-links}}-->
+                        <!--</article>-->
+                    {{!/if}}
+                    <section class="footer-info">
+                        <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                            <h5 class="footer-info-heading">SHOPPING</h5>
+                            <ul class="footer-info-list">
+                                {{#each pages}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                                <li>
+                                    <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                                </li>
+                            </ul>
+                        </article>
+            
+                        <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                            <h5 class="footer-info-heading">MORE LINK</h5>
+                            <ul class="footer-info-list">
+                                {{#each categories}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </article>
+            
+                        {{#if theme_settings.shop_by_brand_show_footer}}
+                        <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                            <h5 class="footer-info-heading">ARE YOUR LIKE ME</h5>
+                            {{> components/common/social-links}}
+                            <p class="el-payment">PAYMENT ACCEPT </p>
+                            <p class="el-paymentImg">
+                                <!-- <img src="{{cdn 'img/paypal.png'}}" alt=""> -->
+                                <img width="49" height="30" src="data:image/png;base64,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">
+                                <!-- <img src="{{cdn 'img/visa.png'}}" alt=""> -->
+                                <img width="49" height="30" src="data:image/png;base64,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">
+                                <!-- <img src="{{cdn 'img/master.png'}}" alt=""> -->
+                                <img width="49" height="30" src="data:image/png;base64,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">
+                            </p>
+                        </article>
+                        {{/if}}
+            
+                        <!--<article class="footer-info-col footer-info-col&#45;&#45;small" data-section-type="storeInfo">-->
+                            <!--<h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>-->
+                            <!--<address>{{nl2br settings.address}}</address>-->
+                            <!--{{#if settings.phone_number}}-->
+                                <!--<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
+                            <!--{{/if}}-->
+                        <!--</article>-->
+            
+                        <!--<article class="footer-info-col" data-section-type="newsletterSubscription">-->
+                            <!--{{!#if settings.show_newsletter_box}}-->
+                                <!--{{> components/common/subscription-form}}-->
+                            <!--{{!/if}}-->
+                            <!--{{!> components/common/payment-icons}}-->
+                        <!--</article>-->
+                    </section>
+                    {{#if theme_settings.geotrust_ssl_common_name}}
+                        <div class="footer-geotrust-ssl-seal">
+                            {{> components/common/geotrust-ssl-seal}}
+                        </div>
+                    {{/if}}
+            
+                </div>
+                <!-- <img src="{{cdn 'img/toTop_03.jpg'}}" alt="" class="el-toTop"> -->
+                <img width="40" height="40" class="el-toTop" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ODJlMWEzMWQtZTJlNy00OGM1LWExZGUtOGJiOGI2NmUwMmY2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjA4MDFERDdFMkJFMzExRTc5MkY2OUM1MkU2RDc0NDVFIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjA4MDFERDdEMkJFMzExRTc5MkY2OUM1MkU2RDc0NDVFIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MmQ4MzNkOTAtZDljZi00YWI0LTgwMjYtNjEyY2RmYzZhZTQ4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyZTFhMzFkLWUyZTctNDhjNS1hMWRlLThiYjhiNjZlMDJmNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIACgAKAMBEQACEQEDEQH/xABiAAEAAwEAAAAAAAAAAAAAAAAAAwQGBQEBAAAAAAAAAAAAAAAAAAAAABAAAAQDBwQDAAAAAAAAAAAAAAECAxESBEFRYRMUBQYxscEVMmJDEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDKAAAAAAAAAJNO/kajLVkTSZsDlmhGEbwEYAAAOzxzjr27PzKiijbODrtpn1lTj2Aaz3HHM/0EqdNLlx/KePwjf9r8QGT5Hx17aX5kxXRuHBp20j6yqx7gOMAALVJudfRtvN0zymkPplcIrS8HiQCqAtVe519Y2y3UvKdQwmVsjsLyeJgKoAAAAAAAP//Z">
+                </div>
 </footer>
+{{#if theme_settings.show_copyright_footer}}
+<!--<div class="footer-copyright">-->
+    <!--<p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>-->
+<!--</div>-->
+
+        <div class="footer-copyright">
+            <div class="container ">
+                    <p>Copyright @ 2017 All Rights Reservced</p>
+                    <ul class="footer-info-list">
+                        
+                                <li>
+                                    <a href="/contact-us/">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/terms-of-use/">Terms of Use</a>
+                                </li>
+                                <li>
+                                    <a href="/privacy-policay/">Privacy Policay</a>
+                                </li>
+                                <li>
+                                    <a href="/sitemap/">Sitemap</a>
+                                </li>
+                                <li class="ka-line">
+                                    <a>|</a>
+                                </li>
+                                <li>
+                                    <a class="ka-currency">Currency: EUR </a>
+                                </li>
+                                
+                                    
+                        </ul>
+            </div>
+
+            </div>
+
+
+{{/if}}
+<div class="container bottom-currency-container">
+
+        <div class="bottom-currency">
+            {{> components/common/currency-selector}}
+       </div>
+
+</div>

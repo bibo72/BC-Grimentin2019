@@ -34,10 +34,22 @@ cite {
     line-height: $blockquote-cite-lineHeight;
     margin: $blockquote-cite-margin;
 }
-
+.banners{
+    display: none;
+    @include breakpoint("medium") {
+        display: block;
+    }
+}
+.el-leftBg{
+    display: none;
+    @include breakpoint("medium"){
+        display: inline-block;
+    }
+}
 .page-heading {
-    margin: 0 0 spacing("double");
+    // margin: 0 0 spacing("double");
     text-align: center;
+    font-weight: bold;
 }
 
 h1 {

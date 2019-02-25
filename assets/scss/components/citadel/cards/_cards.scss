@@ -54,11 +54,12 @@
 }
 
 .card-title {
-    font-size: $card-title-fontSize;
+    font-size: 14px;
     margin: $card-title-margin;
+    font-family: PoppinsM;
 
     > a {
-        color: $card-title-color;
+        color: #808080;
         text-decoration: $card-title-textDecoration;
 
         // scss-lint:disable NestingDepth
@@ -70,12 +71,16 @@
 
 .card-text {
     margin-bottom: $card-text-marginBottom;
-
+    font-weight: bold;
+    color: #808080;
+    display: flex;
+    justify-content: center;
     abbr {
         border: 0;
         color: inherit;
         font-size: inherit;
     }
+
 }
 
 .card-figcaption-button {
@@ -97,7 +102,7 @@
     text-align: center;
 
     @include breakpoint("small") {
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -138,4 +143,39 @@
             color: stencilColor("card--alternate-color--hover");
         }
     }
+}
+.add-cart-container{
+    text-align: center;
+    .card-figcaption-button{
+       display: inline-block;
+       padding:0.5rem 0;
+       border-bottom:1px solid #666666;
+       border-radius: 0;
+       color: #000000;
+       font-weight: bold;
+    }
+}
+.card-body .card-text {
+
+    margin-bottom:0.5rem;
+}
+.productCarousel-slide .card .card-title{
+    @include breakpoint("small"){
+        min-height: 40px;
+    }
+}
+.price-section.price-section--withoutTax{
+    span{
+        color: #000000;
+    }
+    .price--rrp{
+        color: #808080;
+    }
+    &.non-sale-price--withoutTax{
+        span{
+ 
+            color: #808080;
+        }
+    }
+
 }

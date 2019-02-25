@@ -129,7 +129,8 @@
 
 .account-product-subtitle {
     color: color("greys", "light");
-    font-family: fontFamily("sans");
+    // font-family: fontFamily("sans");
+    font-family:PoppinsM;
     font-size: fontSize("smaller");
     margin: -(spacing("eighth")) 0 spacing("base");
     text-transform: inherit;
@@ -193,7 +194,8 @@
 
 .account-product-detail-heading {
     color: stencilColor("color-textSecondary");
-    font-family: fontFamily("sans");
+    // font-family: fontFamily("sans");
+    font-family:PoppinsM;
     font-size: fontSize("tiny");
     margin: 0 0 spacing("quarter");
 }

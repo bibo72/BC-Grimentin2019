@@ -22,12 +22,17 @@
     min-width: 100%;
     margin-bottom: (spacing("double") + spacing("single"));
     margin-top: -(spacing("single")); // 3
-
     @include breakpoint("medium") {
         margin-top: -(spacing("single") + spacing("base")); // 3
+
+        .slick-dots {
+            bottom: 7rem;
+            right: 17%;
+        }
     }
 
-    &.slick-initialized { // 2
+    &.slick-initialized {
+        // 2
         max-height: remCalc(1000);
         opacity: 1;
     }
@@ -38,7 +43,11 @@
 
     .slick-next,
     .slick-prev {
-        top: 50%;
+        top: 17%;
+        @include breakpoint("medium") {
+            top: 50%;
+        }
+       
     }
 
     .slick-next {
@@ -58,21 +67,38 @@
     }
 
     .slick-dots {
-        bottom: spacing("third");
-
+        // bottom: spacing("third");
+    li{
+        button{
+           
+            @include breakpoint("small"){
+                border: 1px solid #ffffff;
+            }
+        }
+        &.slick-active {
+            // scss-lint:disable NestingDepth
+            button::before {
+                @include breakpoint("small"){
+                    background: #ffffff;
+                }
+               
+            }
+        }
+    }
         @include breakpoint("medium") {
-            bottom: spacing("single");
+            // bottom: spacing("single");
         }
 
         // scss-lint:disable SelectorDepth, NestingDepth
         li {
-            @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            background: transparent;
         }
     }
 }
 
 .heroCarousel-slide {
     position: relative;
+
     a {
         text-decoration: none;
     }
@@ -91,13 +117,15 @@
         }
     }
 
-    &.compat-object-fit { // 1
+    &.compat-object-fit {
+        // 1
         background-size: cover;
         background-position: 50%;
         background-repeat: no-repeat;
 
         &.stretch {
-            @include breakpoint("large") { // 4
+            @include breakpoint("large") {
+                // 4
                 background-size: 100% 100%;
             }
         }
@@ -109,21 +137,21 @@
 }
 
 .heroCarousel-content {
-    background-color: rgba($carousel-bgColor, 1);
+    background-color: transparent;
     padding: spacing("half") spacing("single") (spacing("double"));
     text-align: center;
 
     @include breakpoint("medium") {
         @include carouselOpaqueBackgrounds;
-        background-color: rgba($carousel-bgColor, 0.9);
-        left: 0;
+        background-color: transparent;
+        left: 30rem;
         margin: 0 auto;
         padding: spacing("single") * 1.5;
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 34%;
         transform: translateY(-50%);
-        width: remCalc(700px);
+        width: remCalc(600px);
 
         &.heroCarousel-content--empty {
             background-color: transparent;
@@ -132,25 +160,35 @@
 }
 
 .heroCarousel-title {
-    color: $carousel-title-color;
-    font-size: fontSize("small");
+  
+   
     margin-top: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: PoppinsM;
 
     @include breakpoint("medium") {
-        font-size: fontSize("hero");
+        font-size: 30px;
+        color: #ffffff;
+        font-size: 30px;
+        text-align: left;
     }
 }
 
 .heroCarousel-description {
-    color: $carousel-description-color;
+    
     font-size: fontSize("tiny");
+    text-align: center;
 
     @include breakpoint("small") {
         font-size: fontSize("smallest");
     }
 
     @include breakpoint("medium") {
+        color: #ffffff;
         font-size: fontSize("smaller");
+        margin-bottom: 0;
+        text-align: left;
     }
 }
 
@@ -159,5 +197,164 @@
 
     @include breakpoint("medium") {
         margin-top: spacing("single");
+        border-radius: 0;
+        float: left;
+        border: 0;
     }
 }
+.container {
+    .slick-dotted.slick-slider{
+        margin-bottom: 100px;
+    }
+    
+    @include breakpoint("small"){
+        .slick-dotted.slick-slider{
+            padding-bottom: 40px;
+        }
+        .slick-dotted.slick-slider{
+            
+        }
+    }
+}
+.heroCarousel+.container{
+    max-width: 100%;
+    padding: 0;
+}
+.ka-container{
+    padding: 0 3rem;
+    &.ka-home-nav{
+        padding: 0;
+    }
+}
+
+.el-div{
+    @include breakpoint("medium"){
+        margin-bottom: 80px;
+    }
+    
+}
+.el-middleProduct {
+    background-color: #fff;
+    @include breakpoint("medium"){
+        position: absolute;
+        top: 130px;
+        right: 0;
+        width: 65%;
+        // margin-top: 60px;
+    }
+
+}
+.el-viewAll {
+    border-bottom: 1px solid #b3aaa7;
+    z-index: 999;
+    position: absolute;
+    top: -55px;
+    left: 61%;
+}
+.el-categoryText {
+    @include breakpoint("medium"){
+        left: 0;
+
+    }
+    @include breakpoint("small"){
+        top: -130px;
+        right: 9%;
+    }
+
+}
+.el-categoryText{
+    position: absolute;
+    .el-categoryTitle{
+        color: #fff;
+    }
+}
+.home_featured{
+    @include breakpoint("medium"){
+        .slick-dots{
+            bottom: auto;
+            top: 70%;
+        }
+        .slick-dots{
+            right: 30%
+        }
+    }
+
+}
+.el-viewAll{
+    display: none;
+    border-bottom: 1px solid #b3aaa7;
+    z-index: 999;
+    @include  breakpoint("medium"){
+      display: block;
+    }
+    position: absolute;
+    top: -55px;
+    left:61%;
+    a{
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+  .el-categoryText{
+    top:0;
+    right: 20%;
+    position: absolute;
+    @include breakpoint("small"){
+      top:15%;
+      right: 9%;
+    }
+    @include breakpoint(1100px){
+      left:0;
+      top: -130px;
+    }
+    .el-categoryTitle,.el-categoryContent{
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+  .container {
+    .ka-feature {
+        .heroCarousel .slick-next, .heroCarousel .slick-prev{
+            top: 30%;
+            @include breakpoint("small"){
+                top: 17%;
+            }
+        }
+        .slick-dotted.slick-slider{
+            margin-bottom: 0;
+            padding-left:20px;
+            padding-right: 20px;
+            .slick-dots{
+                display: none!important;
+            }
+            @include breakpoint("medium"){
+                .slick-dots{
+                    display: none;
+                }
+            }
+            .slick-next,.slick-prev{
+                @include breakpoint("medium"){
+                    top: -55px;
+                    left: 63%;
+                }
+            } 
+            .slick-prev{
+                @include breakpoint("medium"){
+                    top: -55px;
+                    left: 59.5%;
+                }
+            } 
+        }
+    }
+    .home_featured.slick-dotted.slick-slider{
+       
+        @include breakpoint("small"){
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    }
+    *:focus{
+        outline: none;
+    }
+   

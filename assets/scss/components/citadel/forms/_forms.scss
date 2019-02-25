@@ -133,7 +133,8 @@
 // -----------------------------------------------------------------------------
 
 .form-label--alternate {
-    font-family: fontFamily("headingSans");
+    // font-family: fontFamily("headingSans");
+    font-family:PoppinsM;
     font-size: fontSize("smallest");
     margin-bottom: spacing("half");
 }

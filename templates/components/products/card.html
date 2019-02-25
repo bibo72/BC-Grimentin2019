@@ -53,9 +53,7 @@
                         {{#if pre_order}}
                             <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button">{{lang 'products.pre_order'}}</a>
                         {{/if}}
-                        {{#if add_to_cart_url }}
-                            <a href="{{add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button">{{lang 'products.add_to_cart'}}</a>
-                        {{/if}}
+
                         {{#if out_of_stock_message }}
                             <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{out_of_stock_message}}</a>
                         {{/if}}
@@ -65,15 +63,15 @@
         </figcaption>
     </figure>
     <div class="card-body">
-        {{#and rating show_rating}}
+        {{!#if show_rating}}
             <p class="card-text" data-test-info-type="productRating">
                 <span class="rating--small">
                     {{> components/products/ratings rating=rating}}
                 </span>
             </p>
-        {{/and}}
+            {{!/if}}
         {{#if brand.name}}
-            <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p>
+            <!-- <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p> -->
         {{/if}}
         <h4 class="card-title">
             {{#if demo}}
@@ -89,6 +87,11 @@
             {{else}}
                 {{> components/common/login-for-pricing}}
             {{/or}}
+        </div>
+        <div class="add-cart-container">
+            <!-- #if add_to_cart_url  -->
+                <a href="{{add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button ">{{lang 'products.add_to_cart'}}</a>
+            <!-- /if -->
         </div>
         {{> components/products/bulk-discount-rates}}
     </div>

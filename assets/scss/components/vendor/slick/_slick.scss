@@ -18,11 +18,12 @@
 
 .slick-next,
 .slick-prev {
-    @include carouselOpaqueBackgrounds($slick-arrow-bgColor);
+    top: 40%;
+    // @include carouselOpaqueBackgrounds($slick-arrow-bgColor);
     z-index: 1;
-    border: 1px solid $slick-arrow-borderColor;
+    // border: 1px solid $slick-arrow-borderColor;
     height: remCalc(61px);
-    margin-top: -(remCalc(30px));
+    margin-top: -(remCalc(15px));
     padding: remCalc(10px);
     width: remCalc(40px);
 
@@ -31,8 +32,8 @@
         background-repeat: no-repeat;
         background-size: 100%;
         display: block;
-        height: remCalc(41px);
-        width: remCalc(20px);
+        height: remCalc(14);
+        width: remCalc(14);
     }
 
     &:hover,
@@ -45,10 +46,10 @@
 }
 
 .slick-next {
-    right: -10px;
+    right: -20px;
 
     @include breakpoint("large") {
-        right: -(spacing("double") + spacing("quarter"));
+        // right: -(spacing("double") + spacing("quarter"));
     }
 
     &::before {
@@ -58,16 +59,16 @@
     &:hover {
         // scss-lint:disable NestingDepth
         &::before {
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCAyNCA0MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS40NTY3OSAxLjAwNzQ2MTQ3bDIxIDIwLjAyNDgyMTQzTDEuNTA4ODUgNDEuMDA3NDYxNSIgc3Ryb2tlPSIjOTg5ODk4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+");
+            background-image: $slick-arrow-next;
         }
     }
 }
 
 .slick-prev {
-    left: -15px;
+    left: -20px;
 
     @include breakpoint("large") {
-        left: -(spacing("double") + spacing("quarter"));
+        // left: -(spacing("double") + spacing("quarter"));
     }
 
     &::before {
@@ -77,7 +78,7 @@
     &:hover {
         // scss-lint:disable NestingDepth
         &::before {
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCAyNCA0MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjIuNDU3MjA3NCAxLjAwNzQ2MTQ3bC0yMSAyMC4wMjQ4MjE0MyAyMC45NDc5Mzk3IDE5Ljk3NTE3ODYiIHN0cm9rZT0iIzk4OTg5OCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==");
+            background-image: $slick-arrow-prev;
         }
     }
 }
@@ -102,13 +103,13 @@
         // scss-lint:disable SelectorDepth, NestingDepth
         button,
         button::before {
-            @include square(15px);
+            @include square(12px);
             border-radius: 50%;
         }
 
         button {
             // scss-lint:disable NestingDepth
-            border: 1px solid $slick-dot-color;
+            border: 1px solid #666666;
             display: inline-block;
             margin: 0;
             padding: 0;
@@ -133,7 +134,7 @@
         &.slick-active {
             // scss-lint:disable NestingDepth
             button::before {
-                background: $slick-dot-color-active;
+                background: #666666;
             }
         }
     }
@@ -163,4 +164,8 @@
 .slick-track {
     backface-visibility: hidden; // 2
     perspective: 1000px; // 2
+}
+.slick-dots li button, .slick-dots li button::before{
+    height: 12px;
+    width: 12px;
 }

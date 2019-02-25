@@ -23,15 +23,48 @@
     top: 26px; // 2
     width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
-
+    // max-width: $layout-widthMax;
+   background: #ffffff;
+    padding: 2rem 0;
     @include breakpoint("medium") {
-        padding: 0 spacing("single");
+        padding: 2rem 0;
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         z-index: zIndex("high");
+        border-bottom: 1px solid #e8e8e8;
     }
+
+    .navUser-item--account a::before,.navUser-section a::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 25%;
+        top: 50%;
+        transform: translate(-1rem,-50%);
+        border-right: 2px solid #e8e8e8;
+    }
+    .navUser-item--account a:last-child::before,.navUser-section li:last-child a::before{
+        display: none;
+    }
+    .navUser-section li:last-child a{
+        padding-right: 0;
+    }
+    .navUser-item--account{
+        @include breakpoint("medium"){
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+    }
+    .ka-container{
+        max-width: $layout-widthMax;
+        margin: 0 auto;
+    }
+
 
     .dropdown-menu {
         background-color: stencilColor("navUser-dropdown-backgroundColor");
@@ -73,11 +106,11 @@
 }
 
 .navUser-action {
-    color: stencilColor("navUser-color");
-    font-weight: fontWeight("bold");
-    padding: spacing("base") spacing("half");
+    color: #000000;
+    font-weight: 400;
+    padding: spacing("base") 2rem spacing("base")  0;
     text-decoration: none;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     &:hover,
     &.is-open {
@@ -142,9 +175,27 @@
 
 .navUser-item {
     display: none;
+    a{
+        display: none;
+    }
+    .navUser-item>a{
+        display: none;
+    }
+    a{
 
+        @include breakpoint("medium") {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+        }
+    }
+    a>img{
+        padding-right: 0.5rem;
+
+    }
     @include breakpoint("medium") {
         display: block;
+
 
         &.navUser-item--social {
             margin-top: rem-calc(5px);
@@ -233,7 +284,8 @@
     }
 
     .navUser-action {
-        display: inline-block;
+        display: flex;
+        align-items: inherit;
     }
 }
 

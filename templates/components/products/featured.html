@@ -1,9 +1,64 @@
-<h2 class="page-heading">{{lang 'products.featured' }}</h2>
+<!-- <h2 class="page-heading">{{lang 'products.featured' }}</h2>
 
 <ul class="productGrid productGrid--maxCol{{ columns }}" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
     {{#each products}}
         <li class="product">
-                {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+                {{!>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
         </li>
     {{/each}}
-</ul>
+</ul> -->
+
+<p class="el-viewAll"><a href="./shoes/oxford/" bkt-product-countdown-timer-label-link="true" tabindex="0">View All</a></p>
+<div class="el-categoryText">
+    <h3 class="el-categoryTitle">OXFORD SHOES</h3>
+    <p class="el-categoryContent">Spring / Summer 2017 Collections</p>
+    </div>
+<div class="productGrid productGrid--maxCol{{ columns }} ka-feature" data-product-type="featured">
+    <section class="productCarousel"
+    data-list-name="{{list}}"
+    data-slick='{
+        "dots": true,
+        "infinite": false,
+        "mobileFirst": true,
+        "slidesToShow": 2,
+        "slidesToScroll": 2,
+        "responsive": [
+            {
+                "breakpoint": 1260,
+                "settings": {
+                    "slidesToScroll": 3,
+                    "slidesToShow": 3
+                }
+            },
+            {
+                "breakpoint": 800,
+                "settings": {
+                    "slidesToScroll": 3,
+                    "slidesToShow": 3
+                }
+            },
+            {
+                "breakpoint": 550,
+                "settings": {
+                    "slidesToScroll": 2,
+                    "slidesToShow": 2
+                }
+            }
+        ]
+    }'
+>
+
+        {{#each products}}
+    
+        {{#if image.alt '===' ../name}}
+        <div class="productCarousel-slide">
+                {{>components/products/card theme_settings=../theme_settings customer=../customer}}
+        </div>
+        {{/if}}
+        {{/each}}
+    </section>
+    </div>
+
+
+
+    

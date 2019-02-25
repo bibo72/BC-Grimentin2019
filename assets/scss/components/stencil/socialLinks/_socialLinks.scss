@@ -56,7 +56,7 @@
     font-size: 0; // 1
 
     .socialLinks & { // 2
-        margin-bottom: spacing("quarter");
+        // margin-bottom: 0.8rem;
         margin-right: spacing("half");
 
         // scss-lint:disable NestingDepth
