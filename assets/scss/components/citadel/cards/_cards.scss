@@ -147,12 +147,18 @@
 .add-cart-container{
     text-align: center;
     .card-figcaption-button{
-       display: inline-block;
-       padding:0.5rem 0;
-       border-bottom:1px solid #666666;
-       border-radius: 0;
-       color: #000000;
-       font-weight: bold;
+       // display: inline-block;
+//        padding:0.5rem 0;
+//        border-bottom:1px solid #666666;
+//        border-radius: 0;
+//        color: #000000;
+//        font-weight: bold;
+	     background: #454545;
+        padding:0.8rem 0;
+        width: 12rem;
+        text-align: center;
+        color:#fff;
+        margin: 0 auto;
     }
 }
 .card-body .card-text {

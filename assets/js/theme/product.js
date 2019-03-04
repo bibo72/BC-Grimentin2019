@@ -16,13 +16,14 @@ export default class Product extends PageManager {
     }
 
     onReady() {
+		console.log(this)
         // Listen for foundation modal close events to sanitize URL after review.
         $(document).on('close.fndtn.reveal', () => {
             if (this.url.indexOf('#write_review') !== -1 && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, document.title, window.location.pathname);
             }
         });
-
+		
         let validator;
 
         // Init collapsible

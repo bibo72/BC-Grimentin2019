@@ -5,6 +5,12 @@ export default function () {
     if ($carousel.length) {
         const multipleSlides = $carousel[0].childElementCount > 1;
         $carousel.slick({ dots: multipleSlides });
+		$('body').on('click','.productView-arrowTop',()=>{
+    		$carousel.slick('slickPrev')
+		})
+    	$('body').on('click','.productView-arrowBottom',()=>{
+    		$carousel.slick('slickNext')	
+		})
     }
 
     // Alternative image styling for IE, which doesn't support objectfit
