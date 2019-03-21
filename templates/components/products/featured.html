@@ -50,11 +50,11 @@
 
         {{#each products}}
     
-        {{#if image.alt '===' ../name}}
-        <div class="productCarousel-slide">
-                {{>components/products/card theme_settings=../theme_settings customer=../customer}}
-        </div>
-        {{/if}}
+	        {{#if image.alt '===' ../name}}
+	        <div class="productCarousel-slide">
+	                {{>components/products/card theme_settings=../theme_settings customer=../customer}}
+	        </div>
+	        {{/if}}
         {{/each}}
     </section>
     </div>

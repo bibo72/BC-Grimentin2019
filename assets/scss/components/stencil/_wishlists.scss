@@ -35,3 +35,20 @@
     max-width: remCalc(650px);
     text-align: center;
 }
+.wishlist-product{
+    margin: 0 !important;
+    .card {
+        margin-bottom: 1rem;
+    }
+    .form{
+        display: flex;
+        justify-content: center;
+    }
+    .button--primary{
+        margin: 0 auto;
+        width: 12rem;
+        padding: 0.8rem 0;
+        background: #454545;
+        border-radius: 4px;
+    }
+}

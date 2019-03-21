@@ -21,9 +21,9 @@
     width: 1px;
     min-width: 100%;
     margin-bottom: (spacing("double") + spacing("single"));
-    margin-top: -(spacing("single")); // 3
+    //margin-top: -(spacing("single")); // 3
     @include breakpoint("medium") {
-        margin-top: -(spacing("single") + spacing("base")); // 3
+        //margin-top: -(spacing("single") + spacing("base")); // 3
 
         .slick-dots {
             bottom: 7rem;
@@ -244,30 +244,7 @@
     }
 
 }
-.el-viewAll {
-    border-bottom: 1px solid #b3aaa7;
-    z-index: 999;
-    position: absolute;
-    top: -55px;
-    left: 61%;
-}
-.el-categoryText {
-    @include breakpoint("medium"){
-        left: 0;
 
-    }
-    @include breakpoint("small"){
-        top: -130px;
-        right: 9%;
-    }
-
-}
-.el-categoryText{
-    position: absolute;
-    .el-categoryTitle{
-        color: #fff;
-    }
-}
 .home_featured{
     @include breakpoint("medium"){
         .slick-dots{
@@ -288,8 +265,8 @@
       display: block;
     }
     position: absolute;
-    top: -55px;
-    left:61%;
+    top: 12%;
+    right: 23%;
     a{
       color: #ffffff;
       font-weight: bold;
@@ -297,15 +274,13 @@
   }
   .el-categoryText{
     top:0;
-    right: 20%;
     position: absolute;
+    left: 10%;
     @include breakpoint("small"){
-      top:15%;
-      right: 9%;
+        left: 35%;
     }
     @include breakpoint(1100px){
-      left:0;
-      top: -130px;
+        left: 35%;
     }
     .el-categoryTitle,.el-categoryContent{
       color: #ffffff;
@@ -357,4 +332,61 @@
     *:focus{
         outline: none;
     }
-   
+   .featured-box{
+       display: flex;
+       justify-content: flex-start;
+       flex-wrap:wrap;
+       align-content: flex-start;
+   }
+   .featured-card{
+        padding: 10px 1rem;
+        width:48%;
+        @include breakpoint("small"){
+              width:30%;
+               padding:1rem;
+        }
+   }
+   .featured-card .card {
+        margin: 0;
+        @include breakpoint("small"){
+             margin-bottom: 2rem;
+        }
+   }
+   .featured-silck .slick-next{       
+        top: 10%;
+        right: 0;
+        @include breakpoint("small"){
+           right: 22.5%;   
+        }
+   }
+   .featured-silck .slick-prev{
+       top: 10%;
+       left: 0;
+       @include breakpoint("small"){
+            left: auto;
+            right: 24.5%;   
+        }
+   }
+   .home-carousel{
+       .slick-prev{
+            top:56% ;
+            @include breakpoint("small"){
+                top:46% ; 
+           }
+       }
+       .slick-next{
+            top:56% ;
+            @include breakpoint("small"){
+                top:46% ; 
+           }
+       }
+      
+   }
+.sitemap-box{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: layout("max") + ($container-padding * 4);
+    position: relative;
+    width: layout("fixed");
+    padding: 0 2.8rem;
+}

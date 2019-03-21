@@ -31,6 +31,7 @@
         }
 
         .productView-details {
+            
             @include grid-column(5);
         }
     }

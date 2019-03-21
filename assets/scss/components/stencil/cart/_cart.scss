@@ -442,6 +442,8 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .button--primary {
         width: 60%;
+        background: #454545;
+        border-radius:2px;
     }
 }
 
@@ -588,7 +590,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .previewCartItem-content {
     @include grid-column(8, $float: false);
-    padding-left: 0;
+    padding-left: 10px;
 }
 
 .previewCartItem-name {
@@ -637,8 +639,21 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .previewCartAction-checkout {
     padding-right: spacing("quarter");
+    a{
+        border-radius:2px ;
+        padding: 8px 0 !important;
+        text-align: center;
+        display: inline-block;
+    }   
 }
-
+.previewCartAction-viewCart{
+    a{
+        border-radius:2px ;
+        padding: 8px 0 !important;
+        text-align: center;
+        display: inline-block;
+    }   
+}
 .previewCartAction-checkoutMultiple {
     clear: both;
     padding-left: spacing("half");

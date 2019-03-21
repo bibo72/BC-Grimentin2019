@@ -26,7 +26,7 @@
 
 .card-img-container {
     max-width: get-width(stencilString('productgallery_size'));
-
+    margin-top: 1rem;
     @include lazy-loaded-padding('productgallery_size');
 }
 
@@ -57,12 +57,21 @@
     font-size: 14px;
     margin: $card-title-margin;
     font-family: PoppinsM;
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    @include breakpoint("medium"){
+        overflow:initial; 
+        text-overflow:initial; 
+        white-space:initial;
+     }
+ 
 
     > a {
         color: #808080;
         text-decoration: $card-title-textDecoration;
-
-        // scss-lint:disable NestingDepth
+//      
+                // scss-lint:disable NestingDepth
         &:hover {
             color: $card-title-color-hover;
         }
@@ -87,7 +96,6 @@
     border: $card-figcaption-button-border;
     display: $card-figcaption-button-display;
     margin: $card-figcaption-button-margin;
-
     &:active {
         background-color: $card-figcaption-button-backgroundHover;
         border: $card-figcaption-button-border;
@@ -153,26 +161,38 @@
 //        border-radius: 0;
 //        color: #000000;
 //        font-weight: bold;
-	     background: #454545;
+	    background: #454545;
         padding:0.8rem 0;
-        width: 12rem;
+        width: 90%;
         text-align: center;
         color:#fff;
         margin: 0 auto;
+        border-radius:4px;
+        font-size: 13px;
+        @include breakpoint("small"){
+            width: 12rem;
+        }
     }
 }
 .card-body .card-text {
-
+    font-size: 1rem;
     margin-bottom:0.5rem;
 }
 .productCarousel-slide .card .card-title{
     @include breakpoint("small"){
+        max-height: 40px;
+        overflow: hidden;
         min-height: 40px;
     }
 }
 .price-section.price-section--withoutTax{
+    .price-red{
+        color: red;  
+    }
     span{
-        color: #000000;
+        color: #101010;
+        font-size: 1rem;
+        margin-right:5px ;
     }
     .price--rrp{
         color: #808080;

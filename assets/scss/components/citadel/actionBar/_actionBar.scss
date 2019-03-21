@@ -2,9 +2,11 @@
 // ACTION BAR (CSS)
 // =============================================================================
 
-
+.actionBar{
+    margin: 0 0 1rem;
+}
 .actionBar-section {
-
+    float: right;
     .form-field {
         background-color: $input-bg-color;
         border: $actionBar-form-field-border;

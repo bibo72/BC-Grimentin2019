@@ -16,17 +16,24 @@
 .breadcrumbs {
     display: none; // 1
     font-size: 0; // 2
-    text-align: center;
-
+    margin: 0 0 2.2rem;
+    background: #333;
+    color: #ccc;
+    line-height: 45px;
+    height: 40px;
     @include breakpoint("small") {
         display: block; // 1
     }
 }
-
+.breadcrumbs-box{
+    max-width: 86rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
 .breadcrumb {
     display: inline-block;
     float: none;
-
+    text-transform:capitalize; 
     &.is-active {
 
         // scss-lint:disable NestingDepth
@@ -37,5 +44,12 @@
 }
 
 .breadcrumb-label {
+    color: #ccc !important;
     text-decoration: none;
+    span{
+     text-transform:capitalize; 
+    }   
+}
+.breadcrumb-label:hover{
+    color:white !important;
 }

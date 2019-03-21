@@ -27,7 +27,15 @@ export default class ProductDetails {
             this.productOptionsChanged(event);
             this.setProductVariant();
         });
-
+		
+		if($('#sizeChart')['0']){
+			$('#sizeCharts').on('click',(event)=>{				
+				this.ClickSizeChart(event)
+			})
+		}else{
+			$('#sizeCharts').hide()			
+		}
+	
         $form.on('submit', event => {
             this.addProductToCart(event, $form[0]);
         });
@@ -333,7 +341,27 @@ export default class ProductDetails {
             viewModel.quantity.$text.text(qty);
         });
     }
-
+	/*
+	 *
+	 *size Chart
+	 * 
+	 */
+	ClickSizeChart(event){
+		 if (this.previewModal) {
+	            this.previewModal.open();
+	            let _this=this
+	            let getImg=$('#sizeChart').attr('src')
+	            setTimeout(function(){
+	            	$('.loadingOverlay').hide()
+		           	_this.previewModal.$content.html(function(){
+		           		let dom='<image src="'+getImg+'" style="display: block;width: 60%;height: auto;margin: 1rem auto;"/>'
+		           		return dom
+		           	})
+	            },1500)
+	           	
+	       	}
+	}
+	
     /**
      *
      * Add a product to cart

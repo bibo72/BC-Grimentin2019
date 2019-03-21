@@ -16,14 +16,14 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
+<!-- {{#if category.image}}
     <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage category.image 'zoom_size'}}">
-{{/if}}
+{{/if}} -->
 <h1 class="page-heading">{{category.name}}</h1>
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 {{{category.description}}}
 {{{snippet 'categories'}}}
-<div class="page">
+<div class="page" >
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}

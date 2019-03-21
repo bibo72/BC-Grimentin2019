@@ -11,7 +11,6 @@
 // -----------------------------------------------------------------------------
 
 .productGrid {
-
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
     font-size: 0; // 1
@@ -35,7 +34,9 @@
         }
     }
 }
-
+.card{
+    background: #fff;
+}
 
 // Product when sidebar is present
 // -----------------------------------------------------------------------------
@@ -182,7 +183,9 @@
     opacity: 0;
 }
 .bottom-currency-container{
+    max-width: 80rem;
     height: 0;
+    
 }
 .ka-line{
     font-weight: bold;

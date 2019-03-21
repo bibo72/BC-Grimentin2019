@@ -12,16 +12,18 @@
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
     font-size: 0; // 1
-	display: flex;
-	flex-wrap: wrap;
+	
+}
+.reviwesTap{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start; 
     li{
         padding:10px 10px 10px;
-		border-bottom:1px solid #eee; 
+        border-bottom:1px solid #eee; 
         width: 48%;
-    }
+    } 
 }
-
 
 // Review item
 // -----------------------------------------------------------------------------

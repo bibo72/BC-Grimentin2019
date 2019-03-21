@@ -49,10 +49,10 @@
     position: relative;
 
     .panel-body {
-        min-height: remCalc(250px); // 2
+        min-height: remCalc(120px); // 2
         padding: spacing("single");
-
         @include breakpoint("small") {
+            min-height: remCalc(250px);
             padding: spacing("single") spacing("single") (spacing("single") + spacing("double")); // 3
         }
     }

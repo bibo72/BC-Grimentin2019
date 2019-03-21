@@ -185,13 +185,14 @@
 
         @include breakpoint("medium") {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             position: relative;
         }
     }
     a>img{
         padding-right: 0.5rem;
-
+		width: 25px;
+        height: auto;
     }
     @include breakpoint("medium") {
         display: block;
@@ -395,4 +396,28 @@
 .countPill--alt {
     background-color: color("greys", "lighter");
     color: color("greys", "darker");
+}
+.navUser-m-cart{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    padding: 0;
+    display: inline-block;
+    @include breakpoint("medium"){
+        display: none;
+    }
+    img{
+        display: inline-block;
+        width: 30px;
+        height: auto;
+    }    
+    .cart-quantity{
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        width: 18px;
+        height: 18px;
+        font-weight: normal;
+        line-height: 18px;
+    }
 }

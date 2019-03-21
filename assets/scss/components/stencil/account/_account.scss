@@ -430,3 +430,10 @@
 .account-downloadsItem-availability {
     color: stencilColor("color-textSecondary");
 }
+.account-wishlists,.account-addresses,.account-download,.account-payment{
+    width: 90%;
+    margin: 0 auto;   
+    @include breakpoint("medium") {
+        width: auto;       
+    }
+}

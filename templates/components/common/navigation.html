@@ -19,13 +19,13 @@
     
                     {{#if customer}}
                     <a class="navUser-action" href="{{urls.account.index}}">
-                        <img src="{{cdn 'img/nav-img/user.png'}}" alt="">
+                        <img src="{{cdn 'img/login.png'}}" alt="">
                         {{lang 'common.account'}}
                     </a>
                     <a class="navUser-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
                     {{else}}
                     <a class="navUser-action" href="{{urls.auth.login}}">
-                        <img src="{{cdn 'img/nav-img/user.png'}}" alt="">
+                        <img src="{{cdn 'img/login.png'}}" alt="">
                         {{lang 'common.login'}}
                     </a>
                     {{#if settings.account_creation_enabled}}
@@ -42,8 +42,8 @@
             <ul class="navUser-section navUser-section--alt">
                 <li class="navUser-item">
                     <a class="navUser-action" href="/wishlist.php" bkt-product-countdown-timer-label-link="true">
-                        <img src="{{cdn 'img/nav-img/heart.png'}}" alt="">
-                        {{lang 'common.Whishlist'}}
+                        <img src="{{cdn 'img/whishlist.png'}}" alt="">
+                        <span>{{lang 'common.Whishlist'}}</span>
                     </a>
                 </li>
                 {{#if customer.store_credit.value '>' 0}}
@@ -71,7 +71,7 @@
                 <li class="navUser-item">
                     <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch"
                         aria-expanded="false">
-                        <img src="{{cdn 'img/nav-img/search.png'}}" alt="">
+                        <img src="{{cdn 'img/search.png'}}" alt="">
                         {{lang 'common.search'}}
                     </a>
                 </li>
@@ -84,7 +84,7 @@
                 <li class="navUser-item navUser-item--cart">
                     <a class="navUser-action" data-cart-preview data-dropdown="cart-preview-dropdown" data-options="align:right"
                         href="{{urls.cart}}">
-                        <img src="{{cdn 'img/nav-img/cart.png'}}" alt="">
+                        <img src="{{cdn 'img/cart.png'}}" alt="">
                         <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> <span class="countPill cart-quantity"></span>
                     </a>
     
@@ -96,4 +96,9 @@
                 {{> components/common/quick-search}}
             </div>
         </div>
+         <a class="navUser-action navUser-m-cart" data-cart-preview data-dropdown="cart-preview-dropdown" data-options="align:right"
+                        href="{{urls.cart}}">      
+           	<img src="{{cdn 'img/cart-m.png'}}" alt="">
+            <span class="countPill cart-quantity"></span>
+        </a>
     </nav>

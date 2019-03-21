@@ -6,13 +6,12 @@ import FacetedSearch from './common/faceted-search';
 export default class Category extends CatalogPage {
     onReady() {
         compareProducts(this.context.urls);
-
         if ($('#facetedSearch').length > 0) {
             this.initFacetedSearch();
         } else {
             this.onSortBySubmit = this.onSortBySubmit.bind(this);
             hooks.on('sortBy-submitted', this.onSortBySubmit);
-        }
+        }   
     }
 
     initFacetedSearch() {

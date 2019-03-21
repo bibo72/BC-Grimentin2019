@@ -34,5 +34,23 @@ export default class Global extends PageManager {
         maintenanceMode(this.context.maintenanceMode);
         loadingProgressBar();
         svgInjector();
+        
+         $('.subMouse').bind('mouseenter',function(){
+        	$('.subMouse').removeClass('is-open')
+        	$('.navPage-subMenu').removeClass('is-open')
+        	$(this).addClass('is-open')
+        	$(this).attr('aria-expanded',true)
+        	$(this).siblings('.navPage-subMenu').addClass('is-open')
+        })
+        $('.navPage-subMenu').bind('mouseleave',function(){
+        	$(this).removeClass('is-open')
+        	$(this).siblings('.subMouse').attr('aria-expanded',false)
+        	$(this).siblings('.subMouse').removeClass('is-open')
+        })
+        $('.el-toTop').click(function(){
+        	 $('body,html').animate({
+			       scrollTop: 0
+			      }, 600);
+        })
     }
 }

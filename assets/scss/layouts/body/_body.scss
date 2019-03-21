@@ -9,11 +9,12 @@
 
 
 .body {
-    margin-bottom: spacing("double") * 2;
-    margin-top: spacing("single"); // 1
+//  margin-bottom: spacing("double") * 2;
+    //margin-top: spacing("single"); // 1
     @include breakpoint("medium") {
-        margin-top: spacing("single") + spacing("base"); // 1
+        //margin-top: spacing("single") + spacing("base"); // 1
     }
+     border-bottom: container("border");
 }
 
 
@@ -21,6 +22,9 @@
     @include grid-row(
         $behavior: nest
     );
+   max-width: layout("max") + ($container-padding * 4);
+   padding: 0  2.3rem;
+   margin: 0 auto;
 }
 
 .page-content,

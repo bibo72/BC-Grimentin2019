@@ -87,6 +87,8 @@ export class Collapsible {
 
         // Listen
         this.bindEvents();
+        
+        
     }
 
     get isCollapsed() {
@@ -168,7 +170,7 @@ export class Collapsible {
 
     bindEvents() {
         this.$toggle.on(CollapsibleEvents.click, this.onClicked);
-
+       
         if (this.disabledMediaQueryList && this.disabledMediaQueryList.addListener) {
             this.disabledMediaQueryList.addListener(this.onDisabledMediaQueryListMatch);
         }
@@ -176,19 +178,16 @@ export class Collapsible {
 
     unbindEvents() {
         this.$toggle.off(CollapsibleEvents.click, this.onClicked);
-
+		$('.navPage-subMenu').off(CollapsibleEvents.mouseout,this.onMouseout);
         if (this.disabledMediaQueryList && this.disabledMediaQueryList.removeListener) {
             this.disabledMediaQueryList.removeListener(this.onDisabledMediaQueryListMatch);
         }
     }
-
     onClicked(event) {
         if (this.disabled) {
             return;
         }
-
         event.preventDefault();
-
         this.toggle();
     }
 

@@ -13,21 +13,36 @@
 
 // Images
 // -----------------------------------------------------------------------------
-
+#tab-specs{
+    width: 85%;
+    margin: 0 auto;
+}
+.tab-specs-th{
+    font-size: 1rem;
+    color: #4f4f4f;
+    padding: 10px 0;
+    font-weight: normal;
+}
+.tab-specs-td{
+     font-size: 1rem;
+    color: #4f4f4f;
+    text-align: center;
+}
 .productView-images {
     margin-bottom: spacing("double");
-    display: flex;
-    justify-content: flex-start;
+     margin-bottom: 0px;
 }
 
 .productView-image {
+    display: none;
     align-items: center;
-    display: flex;
+    
     justify-content: center;
     margin: auto;
     position: relative;
     width: 80%;
     @include breakpoint("medium") {
+        display: flex;
         min-height: 366px;
         min-width: inherit;
     }
@@ -55,39 +70,45 @@
 
     @include lazy-loaded-padding('product_size');
 }
-
 .button--primary{
-    width: 20rem !important;
-    background: #333333;
-    border-radius:0 ;
+    background: #454545;
+    border-radius:2px ;
 }
 .productView-thumbnails {
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
     margin-left: -(spacing("quarter"));
     margin-right: -(spacing("quarter"));
-
-//  .slick-list {
-//      margin-left: remCalc(40px);
-//      margin-right: remCalc(40px);
-//  }
+    margin-bottom: 30px;
+    .slick-list {
+        margin-left: remCalc(53px);
+        margin-right: remCalc(57px);
+    }
 
     .slick-next {
         right: 0;
+        top: 60%;
+        @include breakpoint("medium") {
+           top: 36%; 
+        }
     }
 
     .slick-prev {
         left: 0;
-    }
-    width: 100%;
-   
-    
+        top: 60%;
+         @include breakpoint("medium") {
+            top: 36%;
+        }
+    }  
 }
-.productView-slick{//滑动盒子
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 20%;   
+.thumnail-left{
+    @include breakpoint("medium") {
+        text-align:left !important;
+        a{
+            margin-left: 3.9rem !important;
+        }
+    }
+   
 }
 .productView-NumInput{
     width: 5rem;
@@ -132,10 +153,10 @@
     padding-left: spacing("quarter");
     padding-right: spacing("quarter");
     text-align: center;
-    @include breakpoint("large") {
+    width: 100%;
+    @include breakpoint("medium") {
         width: 100%;
     }
-    width: 100% !important;
 }
 
 .productView-thumbnail-link {
@@ -146,14 +167,17 @@
     padding: 2px;
     position: relative;
     text-align: center;
-    width: 100%;
 
     &:hover,
     &.is-active {
         border-color: color("greys", "darker");
     }
 }
-
+.product-one-link{
+    @include breakpoint("medium") {
+        display: inline-block !important;
+    }
+}
 
 // Details
 // -----------------------------------------------------------------------------
@@ -219,20 +243,24 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   flex-wrap: wrap;
+   padding: 20px 0;
+   @include breakpoint("medium") {
+       padding: 20px;
+   }
 }
 .productView-priceOne{
    display: flex;
    justify-content: flex-start;
    align-items:baseline;
-   margin-left:1.5rem ;
-   padding:0 0 1.2rem ;
-   font-family: Montreal-Serial-Regular;
+   margin-left:0.5rem ;
+   padding:0;
+   font-family: Montreal-Serial-Regular; 
     div p{
        font-size: fontSize('smaller');
        font-family: Montreal-Serial-Regular;
        color: #000;
        margin: 0;
-       padding: 1.2rem 0 0;
        @include breakpoint("medium") {
             font-size: fontSize("larger");
         }  
@@ -241,9 +269,14 @@
    
 }
 .productView-priceTwo{
-    font-size: fontSize('smaller');
+    font-size: 12px;
+    margin: 0 0.5rem;
     color: #cd1919;
-    margin-right:1.5rem ;
+    @include breakpoint("medium") {
+        font-size: fontSize('smaller');      
+        margin: 0 1.5rem 0 0;
+     }
+    
 }
 .productView-priceOne s{
        font-size: fontSize('smaller');
@@ -268,6 +301,13 @@
     align-items: center;
     justify-content: flex-end;
     padding: 1rem 0;
+    flex-wrap:wrap;
+    .productView-reviewLink{
+        font-size: 12px;
+        @include breakpoint("medium") {
+            font-size: 1rem;
+        }
+    }
 }
 .productView-rateText{
 	display: flex;
@@ -398,8 +438,8 @@
     margin-top:1rem ;
     @include clearfix;
     margin-bottom: spacing("single");
-    text-align: center;
-
+    text-align: left;
+    position: relative;
     @include breakpoint("small") {
         text-align: left;
     }
@@ -420,7 +460,7 @@
 
     .form-field {
         font-size: 0; // 2
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem 0 1.5rem !important; 
 
         // scss-lint:disable SelectorDepth, NestingDepth
         > .form-checkbox + .form-label,
@@ -441,37 +481,52 @@
     }
 
     .form-action {
-
+         
         @include breakpoint("small") {
             float: left;
             padding: 0 remCalc(10);
             width: 50%;
         }
-
         @include breakpoint("medium") {
             float: none;
             padding: 0;
             width: auto;
         }
-
         @include breakpoint("large") {
             display: inline-block;
             margin-top: 1rem;
+            width: 45%;
+             padding-right: 11px
         }
 
         // scss-lint:disable SelectorDepth, NestingDepth
         .button {
             width: 100%;
-
             @include breakpoint("large") {
-                margin-right: spacing("half");
-                width: auto;
+                width: 100%;
+               
             }
         }
     }
 }
-
-
+.productView-sizeChart{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.productView-sizeChart p{
+    color:#333;
+    text-decoration:underline;
+}
+.productView-sizeChart p:hover{
+    cursor: pointer;
+    color: #777;
+}
+.add-cart-button{
+    @include breakpoint("medium"){
+        width: 95% !important;
+    }  
+}
 // Product list (with images)
 // -----------------------------------------------------------------------------
 
@@ -518,6 +573,7 @@
     }
 }
 .form-option-variant--pattern{
+    min-width: 2.71429rem;
     width: 100% !important;
     height: 100% !important;
     background-size: 100% 100%;
@@ -566,7 +622,7 @@
 }
 .tabs-box>ul{
     width: 22%;
-    padding: 20px;
+    padding: 20px 20px 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -598,6 +654,7 @@
      justify-content: center;
      background: #f5f5f5;
      padding: 20px;
+     overflow: hidden;
  }
 .form-option{
 	width: auto !important;
@@ -605,4 +662,86 @@
 .productView-description{
 	float: none !important;
 	width: 100% !important;
+}
+.product-n-link{
+    max-width: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+    @include breakpoint("medium") {
+        height: 80px;
+    }
+    img{
+        position: relative;
+        display: block;
+        height:auto;
+        width:100%;
+        margin: 0 auto;
+        max-width: none;
+        max-height: none;
+        @include breakpoint("medium") {
+             
+            max-width: 80px;
+            max-height: 80px;
+        }       
+    }
+}
+.productView-des{
+    .tabs-box{
+        display: block;
+        @include breakpoint("medium") {
+            display: flex;
+        }  
+    }
+    .tabs{
+        padding: 0;
+        width: auto;
+       @include breakpoint("medium") {
+           width: 22%;
+            padding: 20px 20px 20px 10px; 
+        }   
+    }
+   .tabs-contents{
+        width: auto;
+        @include breakpoint("medium") {
+           width: 77%;
+        }   
+   }
+}
+#product-reviews-bottom{
+    display: none;
+    @include breakpoint("medium") {
+        display: block;
+    }   
+}
+.productReviews .reviwesTap li{
+    width: 100%;
+   
+}
+.m-top-show{
+    display: block;
+    @include breakpoint("medium") {
+        display: none;
+    } 
+}
+.pc-top-show{
+     display: none;
+    @include breakpoint("medium") {
+        display: block;
+    } 
+}
+.productView-images .slick-slider{
+    margin-bottom: 50px !important;
+     @include breakpoint("medium") {
+        margin-bottom: 100px !important;
+    } 
+}
+#previewModal{
+    top: 30px !important;
+    left: 2.5% !important;
+    @include breakpoint("medium") {
+         top: 50% !important;
+    }
 }

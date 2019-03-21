@@ -1,8 +1,15 @@
 <div class="tabs-box">
 	<ul class="tabs" data-tab>
+		{{#if product.description}}
 	    <li class="tab is-active">
 	        <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
 	    </li>
+	    {{/if}}
+	    {{#if product.custom_fields.length '>'0}}
+	    <li class="tab">
+	        <a class="tab-title" href="#tab-specs">Specs</a>
+	    </li>
+	    {{/if}}
 	    {{#if product.warranty}}
 	        <li class="tab">
 	            <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
@@ -25,18 +32,31 @@
 	    {{/all}}
 	</ul>
 	<div class="tabs-contents">
-	    <div class="tab-content is-active" id="tab-description">
+		{{#if product.description}}
+	    <div class="tab-content is-active" id="tab-description" style="width: 100%;">
 	        {{{product.description}}}
 	        {{{snippet 'product_description'}}}
 	    </div>
+	    {{/if}}
 	   {{#if product.warranty}}
 	       <div class="tab-content" id="tab-warranty">
 	           {{{product.warranty}}}
 	       </div>
 	   {{/if}}
-	   
+	   {{#if product.custom_fields.length '>'0}}
+	   <div class="tab-content" id="tab-specs">
+	   		<table border="1" width="100%">
+	   			{{#each product.custom_fields}}
+					 <tr>
+					 	<th width="30%" class="tab-specs-th">{{name}}:</th>
+					 	<td class="tab-specs-td">{{{value}}}</td></tr>
+				{{/each}}
+	   			
+	   		</table>
+	   </div>
+	   {{/if}}
 	   {{#if product.num_reviews '>'0}}
-	    <div class="tab-content" id="tab-reviews">
+	    <div class="tab-content" id="tab-reviews" style="width: 100%;">
 	    	 {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
 	    </div>
 		{{/if}}
