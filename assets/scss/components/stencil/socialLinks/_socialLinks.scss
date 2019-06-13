@@ -15,7 +15,7 @@
         @include square($socialLinks-iconSize);
         margin: 0;
         text-decoration: none;
-
+        width: 1.4rem!important;
         // scss-lint:disable NestingDepth, SelectorDepth
         &:hover {
 

@@ -51,5 +51,19 @@
 
         {{{footer.scripts}}}
         {{{snippet 'footer'}}}
+        <script>
+            try {
+                ga('set', 'dimension1', window.google_tag_params.ecomm_prodid); // Please make sure that Dimension 1 is set as the Custom Dimension for Product ID
+            } catch (e) {}
+            try {
+                ga('set', 'dimension2', window.google_tag_params.ecomm_pagetype); // Please make sure that Dimension 2 is set as the Custom Dimension for Page Type
+            } catch (e) {}
+            try {
+                ga('set', 'dimension3', window.google_tag_params.ecomm_totalvalue); // Please make sure that Dimension 3 is set as the Custom Dimension for Total Value
+            } catch (e) {}
+            ga('send', 'event', 'page', 'visit', window.google_tag_params.ecomm_pagetype, {
+                'nonInteraction': 1
+            });
+        </script>
     </body>
 </html>

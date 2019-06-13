@@ -21,6 +21,7 @@ category:
 {{/if}} -->
 <h1 class="page-heading">{{category.name}}</h1>
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
 {{{category.description}}}
 {{{snippet 'categories'}}}
 <div class="page" >
@@ -48,6 +49,11 @@ category:
         {{/if}}
     </main>
 </div>
+<script type="text/javascript" >
+    var google_tag_params = {
+        ecomm_pagetype: 'category'
+    };
+</script>
 
 {{/partial}}
 {{> layout/base}}

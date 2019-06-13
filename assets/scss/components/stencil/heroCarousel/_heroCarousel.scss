@@ -222,6 +222,9 @@
 }
 .ka-container{
     padding: 0 3rem;
+    @media(max-width: 800px){
+        padding: 0 1rem;
+    }
     &.ka-home-nav{
         padding: 0;
     }

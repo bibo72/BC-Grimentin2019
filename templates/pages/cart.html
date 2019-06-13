@@ -54,5 +54,23 @@ cart: true
         {{{snippet 'cart'}}}
     </main>
 </div>
+<script type="text/javascript">
+    var cartproductids = cartproductids || [];
+    var google_tag_params = {
+    ecomm_pagetype: 'cart',
+    ecomm_prodid: cartproductids,
+    ecomm_totalvalue: {{cart.grand_total.value}}
+    };
+    </script>
+    <!-- Remarkety cart update start -->
+    <script>
+     {{inject "cartItems" cart.items}} {{inject "cartCoupons" cart.coupons}} {{inject "cartShipping" cart.shipping_handling}} {{inject "cartGrandTotal" cart.grand_total}} {{inject "cartSubTotal" cart.sub_total}}
+     var rmJSContext = JSON.parse({{jsContext}});
+     var rmCart = { items: rmJSContext.cartItems, grand_total: rmJSContext.cartGrandTotal, sub_total: rmJSContext.cartSubTotal, shipping_handling: rmJSContext.cartShipping, coupons: rmJSContext.cartCoupons };
+     var _rmData = _rmData || [];
+     var rmCartUpdate = function(t){ t = t || 0; if(typeof rmBcUtils === "object"){ _rmData.push(["track", "carts/updated", rmBcUtils.stencilCartMapper(rmCart)]); } else if(t < 5){ window.setTimeout(function(){rmCartUpdate(t+1)}, 1000); }}
+     rmCartUpdate();
+    </script>
+    <!-- Remarkety cart update end -->
 {{/partial}}
 {{> layout/base}}

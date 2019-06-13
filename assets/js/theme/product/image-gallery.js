@@ -70,13 +70,17 @@ export default class ImageGallery {
         const containerWidth = $('.productView-image').width();
         const height = this.easyzoom.data('easyZoom').$zoom.context.height;
         const width = this.easyzoom.data('easyZoom').$zoom.context.width;
-        if (height < containerHeight || width < containerWidth) {
+        // if (height < containerHeight || width < containerWidth) {
+            if (width < containerWidth) {
+
+            console.log('ding')
             this.easyzoom.data('easyZoom').hide();
         }
     }
 
     setImageZoom() {
         this.easyzoom = this.$mainImage.easyZoom({
+            
             onShow: () => this.checkImage(),
             errorNotice: '',
             loadingNotice: '',

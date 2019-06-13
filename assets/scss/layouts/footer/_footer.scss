@@ -270,6 +270,14 @@
           width: auto;
         //}
       }
+      
+      @media(max-width: 768px){
+        img{
+          display: none;
+
+        }
+      }
+      
        .form-fieldset,h5,p{
            width: 80%;
            margin: 0 auto;
@@ -394,14 +402,18 @@
     
     border: none;
   }
+  
   .el-originFooter{position: relative;
-    background-image: url("../img/footer-bg.jpg");
+    background-image: url("https://cdn11.bigcommerce.com/s-1n7qe3m6fq/product_images/uploaded_images/01homepage-grimentin-02.jpg");
     background-size: inherit;
     background-repeat:no-repeat;
     background-color: #252525;
     padding: 3rem 0;
     @include breakpoint("medium"){
-      background-size: 100% 100%;
+      background-size: 35% 100%;
+    }
+    @media(max-width: 768px){
+      background-image: none;
     }
   
   }

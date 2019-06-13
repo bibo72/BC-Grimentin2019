@@ -43,10 +43,9 @@ export default class Product extends PageManager {
 
         $reviewForm.on('submit', () => {
             if (validator) {
-                validator.performCheck();
+                validator.performCheck()
                 return validator.areAll('valid');
             }
-
             return false;
         });
 

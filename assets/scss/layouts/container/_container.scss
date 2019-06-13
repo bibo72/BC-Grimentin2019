@@ -14,4 +14,7 @@
 //  @include breakpoint("large") {
 //      padding: 0 ($container-padding * 2);
 //  }
+@media(max-width:768px){
+    padding: 0 20px
+}
 }

@@ -10,6 +10,7 @@
 }
 
 .dropdown-menu {
+    top: 41.9px!important;
     &.is-loading .loadingOverlay {
         background: none;
         padding: (spacing("double") + spacing("single")) 0;

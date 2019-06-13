@@ -25,6 +25,9 @@
    max-width: layout("max") + ($container-padding * 4);
    padding: 0  2.3rem;
    margin: 0 auto;
+   @media (max-width:800px) {
+       padding: 0;
+   }
 }
 
 .page-content,

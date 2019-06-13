@@ -33,8 +33,11 @@ export default class ProductDetails {
 				this.ClickSizeChart(event)
 			})
 		}else{
-			$('#sizeCharts').hide()			
-		}
+			// $('#sizeCharts').hide()			
+        }
+        $('#sizeCharts').on('click',(event)=>{				
+            this.ClickSizeChart(event)
+        })
 	
         $form.on('submit', event => {
             this.addProductToCart(event, $form[0]);
@@ -354,7 +357,7 @@ export default class ProductDetails {
 	            setTimeout(function(){
 	            	$('.loadingOverlay').hide()
 		           	_this.previewModal.$content.html(function(){
-		           		let dom='<image src="'+getImg+'" style="display: block;width: 60%;height: auto;margin: 1rem auto;"/>'
+		           		let dom='<image class="sizechat" src="https://cdn11.bigcommerce.com/s-s3wy5uz523/product_images/uploaded_images/size-chat.jpg" style="display: block;height: auto;margin: 1rem auto;overflow:scroll;"/>'
 		           		return dom
 		           	})
 	            },1500)

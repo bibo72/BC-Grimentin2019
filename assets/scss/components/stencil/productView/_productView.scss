@@ -8,6 +8,7 @@
 
 .productView {
     padding-top: spacing("base");
+    
 }
 
 
@@ -40,7 +41,7 @@
     justify-content: center;
     margin: auto;
     position: relative;
-    width: 80%;
+    // width: 80%;
     @include breakpoint("medium") {
         display: flex;
         min-height: 366px;
@@ -59,7 +60,7 @@
 .productView-img-container {
     position: relative;
     margin: auto;
-    max-width: get-width(stencilString('product_size'));
+    // max-width: get-width(stencilString('product_size'));
     width: 100%;
     border:1px solid #e5e5e5;
     img {
@@ -74,6 +75,7 @@
     background: #454545;
     border-radius:2px ;
 }
+
 .productView-thumbnails {
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
@@ -84,12 +86,21 @@
         margin-left: remCalc(53px);
         margin-right: remCalc(57px);
     }
+    @media(max-width:800px){
+        .draggable{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
 
     .slick-next {
         right: 0;
         top: 60%;
         @include breakpoint("medium") {
            top: 36%; 
+        }
+        @media(max-width:800px){
+            right: -12px;
         }
     }
 
@@ -98,6 +109,9 @@
         top: 60%;
          @include breakpoint("medium") {
             top: 36%;
+        }
+        @media(max-width:800px){
+            left: -10px;
         }
     }  
 }
@@ -216,6 +230,7 @@
 }
 
 .productView-brand {
+    display: none;
     color: $productView-brand-link-color;
     font-size: fontSize("smaller");
     margin: 0 0 spacing("half");
@@ -310,7 +325,8 @@
     }
 }
 .productView-rateText{
-	display: flex;
+    // display: flex;
+    display: none;
 	justify-content:flex-start;
 	flex-wrap: wrap;
 	padding:1rem 0 0 0; 
@@ -741,6 +757,7 @@
 #previewModal{
     top: 30px !important;
     left: 2.5% !important;
+    overflow: scroll;
     @include breakpoint("medium") {
          top: 50% !important;
     }

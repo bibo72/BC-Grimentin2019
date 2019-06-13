@@ -123,7 +123,7 @@ class FacetedSearch {
 
         api.getPage(urlUtils.getUrl(), this.requestOptions, (err, content) => {
             $(this.options.blockerSelector).hide();
-
+            
             if (err) {
                 throw new Error(err);
             }
@@ -335,6 +335,7 @@ class FacetedSearch {
     }
 
     onToggleClick(event) {
+        console.log('onToggleClick',event.currentTarget)
         const $toggle = $(event.currentTarget);
         const $navList = $($toggle.attr('href'));
 
@@ -346,6 +347,8 @@ class FacetedSearch {
     }
 
     onFacetClick(event) {
+        // debugger
+        console.log('onFacetClick')
         const $link = $(event.currentTarget);
         const url = $link.attr('href');
 
@@ -387,10 +390,12 @@ class FacetedSearch {
     }
 
     onStateChange() {
+        console.log('onStateChange')
         this.updateView();
     }
 
     onAccordionToggle(event) {
+        console.log('onAccordionToggle')
         const $accordionToggle = $(event.currentTarget);
         const collapsible = $accordionToggle.data('collapsibleInstance');
         const id = collapsible.targetId;

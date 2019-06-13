@@ -1,0 +1,21 @@
+
+.purchase_form_row{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    float: left;
+    max-width: none;
+    display: block;
+    margin: 0 0 2rem;
+}
+._gift{
+    padding: 20px
+}
+.sizechat{
+    @media(min-width: 1200px){
+        width: 60%
+    }
+    @media (max-width:800px) {
+        width: 80%;
+    }
+}
